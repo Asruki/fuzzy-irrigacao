@@ -11,10 +11,9 @@ Atividade Prática sobre Sistemas Fuzzy
 
 ## Links
 
-- Aplicação publicada (GitHub Pages): `https://SEU-USUARIO.github.io/SEU-REPOSITORIO/`
-- Repositório público: `https://github.com/SEU-USUARIO/SEU-REPOSITORIO`
-
-> Lembre-se de trocar o link do repositório também em `index.html` (botão do cabeçalho e rodapé).
+- Aplicação publicada (GitHub Pages): `https://asruki.github.io/fuzzy-irrigacao/`
+- Repositório público: `https://asruki.github.io/fuzzy-irrigacao/`
+- 
 
 ## Descrição do modelo Mamdani
 
@@ -151,9 +150,3 @@ Alterar consequentes muda a forma da agregação e, portanto, o centroide: com t
 - Entrada válida com vírgula decimal (`35,5`) é aceita.
 - Repetir a mesma configuração produz graus, ativações, área agregada e tempo idênticos (comparação do resultado completo serializado). **Calcular** e **Avançar etapa** usam o mesmo resultado, calculado uma única vez, então a saída final coincide. Gráficos e animações só leem esse resultado e não o alteram.
 - Verificado também com um navegador simulado (jsdom): Calcular, passo a passo, limpeza ao alterar configuração, bloqueio de entradas inválidas e Restaurar padrão (35 %, 30 °C, regras e Δz iniciais, resultado 16,79 min).
-
-## Publicação no GitHub Pages
-
-1. Crie um repositório público e envie todos os arquivos desta pasta para a raiz.
-2. Em **Settings → Pages**, escolha *Deploy from a branch*, branch `main`, pasta `/ (root)`.
-3. Aguarde a publicação e entregue o link `https://SEU-USUARIO.github.io/SEU-REPOSITORIO/` (o link do repositório sozinho não substitui o do GitHub Pages).
