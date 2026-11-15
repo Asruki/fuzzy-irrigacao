@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador Fuzzy Mamdani — Irrigação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="uni">Universidade Federal do Piauí · Inteligência Artificial · 2026.2</p>
+      <h1>Simulador fuzzy Mamdani de irrigação</h1>
+      <p class="sub">Recomenda o tempo de irrigação de um jardim a partir da umidade do solo e da temperatura do ambiente.
+        As pertinências são <em>graus de compatibilidade</em> com termos linguísticos, não probabilidades, e o tempo
+        calculado vem de inferência por regras, não de aprendizado.</p>
+    </div>
+    <a class="repo" id="repoLink" href="https://github.com/SEU-USUARIO/SEU-REPOSITORIO" target="_blank" rel="noopener">
+      Código-fonte no GitHub
+    </a>
+  </header>
+
+  <main class="layout">
+    <aside class="panel" id="config" aria-label="Configuração">
+      <h2>Configuração</h2>
+
+      <div class="field">
+        <label for="inputU">Umidade do solo (%)</label>
+        <div class="pair">
+          <input id="inputU" type="text" inputmode="decimal" autocomplete="off" value="35" aria-describedby="errU">
+          <input id="rangeU" type="range" min="0" max="100" step="1" value="35" aria-label="Umidade do solo, deslizante">
+        </div>
+        <p class="hint">Intervalo válido: 0 a 100 %</p>
+        <p class="err" id="errU" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="inputT">Temperatura (°C)</label>
+        <div class="pair">
+          <input id="inputT" type="text" inputmode="decimal" autocomplete="off" value="30" aria-describedby="errT">
+          <input id="rangeT" type="range" min="10" max="40" step="0.5" value="30" aria-label="Temperatura, deslizante">
+        </div>
+        <p class="hint">Intervalo válido: 10 a 40 °C</p>
+        <p class="err" id="errT" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label for="selectDz">Passo de defuzzificação Δz (min)</label>
+        <select id="selectDz">
+          <option value="0.1" selected>0,1 min</option>
+          <option value="0.05">0,05 min</option>
+          <option value="0.01">0,01 min</option>
+        </select>
+        <p class="hint">Centroide por pontos médios: z(k) = (k + 0,5)·Δz</p>
+      </div>
+
+      <fieldset class="field rules-cfg">
+        <legend>Consequente de cada regra</legend>
+        <div id="rulesConfig"></div>
+      </fieldset>
+
+      <div class="buttons">
+        <button id="btnCalc" class="primary" type="button">Calcular</button>
+        <button id="btnNext" type="button">Avançar etapa</button>
+        <button id="btnReset" type="button">Restaurar padrão</button>
+      </div>
+      <p class="stepper" id="stepper" aria-live="polite"></p>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </aside>
+
+    <section id="steps" aria-label="Etapas da inferência"></section>
+  </main>
+
+  <section class="tests">
+    <details>
+      <summary>Testes de validação (seção 6 do enunciado)</summary>
+      <p class="hint">Executa no navegador os mesmos testes de <code>tests.js</code> (também rodam com <code>node tests.js</code>).</p>
+      <button id="btnTests" type="button">Executar testes</button>
+      <p id="testsSummary" class="status" role="status"></p>
+      <div class="table-wrap"><table id="testsTable" hidden></table></div>
+    </details>
+  </section>
+
+  <footer>
+    <p>Motor Mamdani implementado do zero em JavaScript, sem bibliotecas de lógica fuzzy ou de IA. Gráficos desenhados em SVG puro.
+      Autores: <strong>PREENCHER NOMES (máx. 3)</strong> ·
+      <a href="https://github.com/SEU-USUARIO/SEU-REPOSITORIO" target="_blank" rel="noopener">Repositório</a></p>
+  </footer>
+
+  <script src="fuzzy.js"></script>
+  <script src="tests.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
