@@ -12,7 +12,7 @@ Atividade Prática sobre Sistemas Fuzzy
 ## Links
 
 - Aplicação publicada (GitHub Pages): `https://asruki.github.io/fuzzy-irrigacao/`
-- Repositório público: `https://asruki.github.io/fuzzy-irrigacao/`
+- Repositório público: `https://github.com/Asruki/fuzzy-irrigacao`
 - 
 
 ## Descrição do modelo Mamdani
